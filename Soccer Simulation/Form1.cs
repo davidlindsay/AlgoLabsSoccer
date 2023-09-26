@@ -28,6 +28,11 @@ namespace Soccer_Simulation
             // Draw the green background.
             g.Clear(Color.Green);
 
+            // Draw goals.
+            g.FillRectangle(Brushes.Red, 0, 232, 10, 50); // Red goal on the left.
+            g.FillRectangle(Brushes.Blue, 853 - 10, 232, 10, 50); // Blue goal on the right.
+
+
             foreach (var team in game.Teams)
             {
                 foreach (var agent in team.Agents)

@@ -21,20 +21,20 @@ namespace Soccer_Simulation
         public int Y { get; set; }
         public Team Team { get; set; }
 
-        public Agent(int x, int y, Team team)
+        public Agent(int x, int y, Team team, PointF direction)
         {
             X = x;
             Y = y;
             Team = team;
+            Direction = direction;
         }
 
         public void Move(Ball ball)
         {
             // Simple AI logic: Move towards the ball.
-            if (ball.X > this.X) this.X += Speed;
-            if (ball.X < this.X) this.X -= Speed;
-            if (ball.Y > this.Y) this.Y += Speed;
-            if (ball.Y < this.Y) this.Y -= Speed;
+            // Move the agent in the direction it is facing.
+            this.X += (int)Direction.X;
+            this.Y += (int)Direction.Y;
         }
 
         public void Stop()

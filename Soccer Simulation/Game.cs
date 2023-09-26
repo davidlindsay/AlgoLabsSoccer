@@ -14,19 +14,18 @@ namespace Soccer_Simulation
         public Game()
         {
             // Initialize ball.
-            Ball = new Ball(50, 50); // You can set the initial position of the ball as per your requirement.
+            Ball = new Ball(431, 257); // Half of 863 by 515.
 
             // Initialize teams and agents.
-            Team team1 = new Team("Team 1");
-            team1.Agents.Add(new Agent(10, 10, team1)); // Initial position (10, 10) for an agent of Team 1.
-            team1.Agents.Add(new Agent(10, 90, team1)); // Initial position (10, 90) for another agent of Team 1.
+            Team redTeam = new Team("Team 1");
+            redTeam.Agents.Add(new Agent(200, 207, redTeam, new PointF(1, 0))); // Left half facing right.
+            redTeam.Agents.Add(new Agent(200, 307, redTeam, new PointF(1, 0))); // Left half facing right.
+            Teams.Add(redTeam);
 
-            Team team2 = new Team("Team 2");
-            team2.Agents.Add(new Agent(90, 10, team2)); // Initial position (90, 10) for an agent of Team 2.
-            team2.Agents.Add(new Agent(90, 90, team2)); // Initial position (90, 90) for another agent of Team 2.
-
-            Teams.Add(team1);
-            Teams.Add(team2);
+            Team blueTeam = new Team("Team 2");
+            blueTeam.Agents.Add(new Agent(663, 207, blueTeam, new PointF(-1, 0))); // Right half facing left.
+            blueTeam.Agents.Add(new Agent(663, 307, blueTeam, new PointF(-1, 0))); // Right half facing left.
+            Teams.Add(blueTeam);
         }
 
         public void Update()

@@ -11,8 +11,8 @@ namespace Soccer_Simulation
         // ... Other properties ...
         public int Width { get; } = 10;
         public int Height { get; } = 10;
-        public int SpeedX { get; set; } = 1; // Horizontal speed of the ball.
-        public int SpeedY { get; set; } = 1; // Vertical speed of the ball.
+        public int SpeedX { get; set; } = 0; // Horizontal speed of the ball.
+        public int SpeedY { get; set; } = 0; // Vertical speed of the ball.
 
         // ... Other methods ...
 
